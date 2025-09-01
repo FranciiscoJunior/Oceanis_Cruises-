@@ -1,0 +1,23 @@
+.cover-section {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../image/pexels-kellie-churchman-371878-1001682.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.card-testimonial {
+    max-width: 24rem;
+}
+
+.card-testimonial img {
+    height: 12rem;
+    width: 12rem;
+}
+
+.destinations-section {
+    background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+        url('../image/pexels-fabianwiktor-994605.webp');
+    background-size: cover;
+    background-position: center;
+    min-height: 32rem;
+}
