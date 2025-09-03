@@ -1,6 +1,6 @@
 let dadosEstados = [];
 
-// Carrega os dados do JSON de forma assíncrona
+// Carregando os dados do JSON de forma assíncrona
 async function carregarEstados() {
     try {
         const resposta = await fetch('estados.json');

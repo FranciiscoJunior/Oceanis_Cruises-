@@ -42,7 +42,7 @@ try {
     }
 }
 
-// 🔍 Autocomplete: busca endereços online via Nominatim (OpenStreetMap)
+//Busca endereços online via Nominatim (OpenStreetMap)
 async function buscarEnderecosOnline(termo, cidade = '', estado = '') {
     if (termo.length < 3) return;
 
