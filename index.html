@@ -73,7 +73,7 @@
             <div class="container py-5">
                 <h2 class="text-center"><b>Viva o Melhor da Vida a Bordo</b></h2>
                 <p class="fs-5 mb-5 text-secondary text-center">
-                Conforto, diversão e experiências inesquecíveis para você
+                    Conforto, diversão e experiências inesquecíveis para você
                 </p>
 
                 <div id="carouselCaptions" class="carousel slide" data-bs-ride="carousel">
@@ -88,14 +88,14 @@
 
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                    <img src="./image/pexels-lachlan-ross-6510311.webp" width="50%" height="500" class="d-block w-100 rounded-4" alt="...">
-                        <div class="carousel-caption d-none d-md-block bg-dark text-light rounded-4" style="--bs-bg-opacity: .75">
-                            <h3>Acomodações luxuosas com vista para o mar</h3>
-                            <p>
-                            Quartos espaçosos e confortáveis, projetados para proporcionar uma estadia inesquecível com uma vista
-                            deslumbrante do oceano.
-                            </p>
-                        </div>
+                        <img src="./image/pexels-lachlan-ross-6510311.webp" width="50%" height="500" class="d-block w-100 rounded-4" alt="...">
+                            <div class="carousel-caption d-none d-md-block bg-dark text-light rounded-4" style="--bs-bg-opacity: .75">
+                                <h3>Acomodações luxuosas com vista para o mar</h3>
+                                <p>
+                                Quartos espaçosos e confortáveis, projetados para proporcionar uma estadia inesquecível com uma vista
+                                deslumbrante do oceano.
+                                </p>
+                            </div>
                     </div>
 
                     <div class="carousel-item">
@@ -268,7 +268,7 @@
                     Garanta um atendimento de qualidade com algum de nossos especialistas
                 </p>
 
-                <form class="row g-3">
+                <form id="form" class="row g-3">
                     <div class="col-md-6">
                         <label for="inputAddress2" class="form-label">Seu Nome</label>
                         <input type="text" class="form-control" id="inputAddress2" placeholder="Seu Nome">
@@ -280,37 +280,9 @@
                     </div>
 
                     <div class="col-md-4">
-                        <label for="inputState" class="form-label" aria-placeholder="Estado de atendimento">Adicione seu Estado atual</label>
-                        <select id="inputState" class="form-select">
-                            <option selected>Escolha...</option>
-                            <option value="">São Paulo - SP</option>
-                            <option value="">Rio de Janeiro - RJ</option>
-                            <option value="">Minas Gerais - MG</option>
-                            <option value="">Espírito Santo - ES</option>
-                            <option value="">Paraná - PR</option>
-                            <option value="">Santa Catarina - SC</option>
-                            <option value="">Rio Grande do Sul - RS</option>
-                            <option value="">Bahia - BA</option>
-                            <option value="">Rio Grande do Norte - RN</option>
-                            <option value="">Ceará - CE</option>
-                            <option value="">Pernambuco - PE</option>
-                            <option value="">Alagoas - AL</option>
-                            <option value="">Sergipe - SE</option>
-                            <option value="">Paraíba - PB</option>
-                            <option value="">Piauí - PI</option>
-                            <option value="">Maranhão - MA</option>
-                            <option value="">Tocantins - TO</option>
-                            <option value="">Acre - AC</option>
-                            <option value="">Amapá - AP</option>
-                            <option value="">Amazonas - AM</option>
-                            <option value="">Rondônia - RO</option>
-                            <option value="">Roraima - RR</option>
-                            <option value="">Amapá - AP</option>
-                            <option value="">Pará - PA</option>
-                            <option value="">Mato Grosso do Sul - MS</option>
-                            <option value="">Mato Grosso - MT</option>
-                            <option value="">Goiás - GO</option>
-                            <option value="">Distrito Federal - DF</option>
+                        <label for="estado" class="form-label" aria-placeholder="Estado de atendimento">Adicione seu Estado atual</label>
+                        <select id="estado" class="form-select">
+                            <option value="">Selecione um estado</option>
                         </select>
                     </div>
 
@@ -320,9 +292,9 @@
                     </div>
 
                     <div class="col-md-6">
-                        <label for="inputCity" class="form-label">Cidade</label>
+                        <label for="cidade" class="form-label">Cidade</label>
                         <select id="cidade" name="cidade" class="form-control">
-                            <option value="">--Selecione a Cidade--</option>
+                            <option value="">Selecione a Cidade</option>
                         </select>
                     </div>
 
@@ -394,13 +366,14 @@
         </section>
     </main>
 
-    <footer class="bg-dark text-light text-center py-4">
-        Todos os direitos reservados &copy; 2025 Oceanis Cruises - Desenvolvido por Francisco Júnior - Versão 1.0.0
-    </footer>
+        <footer class="bg-dark text-light text-center py-4">
+            Todos os direitos reservados &copy; 2025 Oceanis Cruises - Desenvolvido por Francisco Júnior - Versão 1.0.0
+        </footer>
     </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous">
+    </script>
 
     <script src="index.js"></script>
     <script src="script.js"></script>

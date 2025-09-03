@@ -1,41 +1,90 @@
 function limparCamposEndereco() {
-    document.getElementById('inputAddress').value = '';
+    document.getElementById('logradouro').value = '';
+    document.getElementById('bairro').value = '';
     document.getElementById('cidade').value = '';
-    document.getElementById('inputState').value = '';
+    document.getElementById('estado').value = '';
+    document.getElementById('sugestoes-logradouro').innerHTML = '';
 }
 
-function buscarEnderecoPorCep() {
-    const cepInput = document.getElementById('cep');
-    const cep = cepInput.value.replace(/\D/g, '');
+// Consulta o CEP e preenche os campos
+async function consultarCep(cep) {
+    const cepLimpo = cep.replace(/\D/g, '');
 
-if (cep.length !== 8) {
-    alert('CEP inválido! Digite um CEP com 8 dígitos.');
-    limparCamposEndereco();
-    return;
-}
+    if (cepLimpo.length !== 8) {
+        limparCamposEndereco();
+        return;
+    }
 
-const url = `https://viacep.com.br/ws/${cep}/json/`;
+try {
+    const resposta = await fetch(`https://viacep.com.br/ws/${cepLimpo}/json/`);
+    const dados = await resposta.json();
 
-fetch(url)
-    .then(response => {
-    if (!response.ok) throw new Error('Erro ao consultar o CEP.');
-    return response.json();
-})
-
-.then(data => {
-    if (data.erro) {
+    if ('erro' in dados) {
         alert('CEP não encontrado.');
         limparCamposEndereco();
         return;
+    }
+
+    document.getElementById('endereco').value = dados.endereco || '';
+    document.getElementById('complemento').value = dados.complemento || '';
+    document.getElementById('cidade').value = dados.localidade || '';
+    document.getElementById('estado').value = dados.uf || '';
+
+    // Ativa autocomplete se endereço não estiver preenchido
+    if (!dados.endereco) {
+        ativarSugestoesDeLogradouroOnline(dados.localidade, dados.uf);
+    }
+
+    } catch (erro) {
+        console.error('Erro ao buscar o CEP:', erro);
+        alert('Erro ao buscar o CEP. Tente novamente mais tarde.');
+        limparCamposEndereco();
+    }
 }
 
-    document.getElementById('inputAddress').value = data.logradouro || '';
-    document.getElementById('cidade').value = data.localidade || '';
-    document.getElementById('inputState').value = data.uf || '';
-})
+// 🔍 Autocomplete: busca endereços online via Nominatim (OpenStreetMap)
+async function buscarEnderecosOnline(termo, cidade = '', estado = '') {
+    if (termo.length < 3) return;
 
-.catch(error => {
-    console.error('Erro na consulta do CEP:', error);
-    limparCamposEndereco();
+    const datalist = document.getElementById('sugestoes-endereco');
+    datalist.innerHTML = '';
+
+    const query = encodeURIComponent(`${termo}, ${cidade}, ${estado}, Brasil`);
+    const url = `https://nominatim.openstreetmap.org/search?format=json&limit=5&q=${query}`;
+
+try {
+    const resposta = await fetch(url, {
+        headers: {
+            'Accept-Language': 'pt-BR',
+            'User-Agent': 'FormEndereco/1.0 (seuemail@exemplo.com)' // obrigatório para Nominatim
+        }
+    });
+
+    const resultados = await resposta.json();
+
+    resultados.forEach(resultado => {
+        const option = document.createElement('option');
+        option.value = resultado.display_name;
+        datalist.appendChild(option);
+    });
+
+    } catch (erro) {
+        console.error('Erro ao buscar logradouros online:', erro);
+    }
+}
+
+// Ativa autocomplete quando cidade/estado estão disponíveis
+function ativarSugestoesDeEnderecoOnline(cidade, estado) {
+    const inputEndereco = document.getElementById('endereco');
+    inputEndereco.removeAttribute('readonly'); // permite digitar
+
+    inputEndereco.addEventListener('input', () => {
+        const termo = inputEndereco.value;
+        buscarEnderecosOnline(termo, cidade, estado);
     });
 }
+
+// Evento ao sair do campo de CEP
+document.getElementById('cep').addEventListener('blur', function () {
+    consultarCep(this.value);
+});

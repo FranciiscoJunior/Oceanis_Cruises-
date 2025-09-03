@@ -1,36 +1,47 @@
-function atualizarCidadesPorEstado() {
-    const estadoSelect = document.getElementById('inputState');
-    const cidadeSelect = document.getElementById('cidade');
-    const estadoSelecionado = estadoSelect.value;
+let dadosEstados = [];
 
-cidadeSelect.innerHTML = '<option value="">--Selecione a Cidade--</option>';
+// Carrega os dados do JSON de forma assíncrona
+async function carregarEstados() {
+    try {
+        const resposta = await fetch('estados.json');
+        dadosEstados = await resposta.json();
 
-if (!estadoSelecionado) return;
+        const selectEstado = document.getElementById('estado');
 
-fetch('estados_cidades.json')
+    // Preenche o select de estados
+        dadosEstados.forEach(estado => {
+            const option = document.createElement('option');
+            option.value = estado.estado;
+            option.textContent = estado.nome;
+            selectEstado.appendChild(option);
+        });
 
-.then(response => {
-    if (!response.ok) throw new Error('Erro ao carregar o JSON de estados e cidades.');
-    return response.json();
-})
+    // Adiciona evento para quando o estado for alterado
+        selectEstado.addEventListener('change', function () {
+            const estadoSelecionado = this.value;
+            atualizarCidades(estadoSelecionado);
+        });
 
-.then(estados => {
-    const estadoEncontrado = estados.find(e => e.estado === estadoSelecionado);
-
-    if (!estadoEncontrado) {
-        console.warn(`Estado "${estadoSelecionado}" não encontrado no JSON.`);
-        return;
+    } catch (erro) {
+        console.error('Erro ao carregar os estados:', erro);
     }
-
-    estadoEncontrado.municipios.forEach(cidade => {
-        const option = document.createElement('option');
-        option.value = cidade;
-        option.textContent = cidade;
-        cidadeSelect.appendChild(option);
-    });
-})
-
-    .catch(error => {
-        console.error('Erro ao buscar cidades:', error);
-    });
 }
+
+// Atualiza o select de cidades conforme o estado selecionado
+function atualizarCidades(estadoSelecionado) {
+    const selectCidade = document.getElementById('cidade');
+    selectCidade.innerHTML = '<option value="">Selecione uma cidade</option>';
+
+const estado = dadosEstados.find(e => e.estado === estadoSelecionado);
+        if (estado) {
+            estado.cidades.forEach(cidade => {
+            const option = document.createElement('option');
+            option.value = cidade;
+            option.textContent = cidade;
+            selectCidade.appendChild(option);
+        });
+    }
+}
+
+// Inicia o carregamento ao abrir a página
+carregarEstados();

@@ -1,7 +1,8 @@
 [
   {
-    "Estado": "São Paulo",
-    "Municipios": [
+    "estado": "São Paulo",
+    "nome": "São Paulo",
+    "cidades": [
     "Adamantina",
     "Adolfo",
     "Aguaí",
@@ -647,8 +648,9 @@
   ]
 },
 {
-    "Estado": "Rio de Janeiro",
-    "Municipios": [
+    "estado": "Rio de Janeiro",
+    "nome": "Rio de Janeiro",
+    "cidades": [
     "Angra dos Reis",
     "Aperibé",
     "Araruama",
@@ -744,8 +746,9 @@
   ]
 },
   {
-    "Estado": "Minas Gerais",
-    "Municipios": [
+    "estado": "Minas Gerais",
+    "nome": "Minas Gerais",
+    "cidades": [
     "Abadia dos Dourados",
     "Abaeté",
     "Abre Campo",
@@ -1600,8 +1603,9 @@
   ]
 },
 {
-    "Estado": "Espirito Santo",
-    "Municipios":  [
+    "estado": "Espirito Santo",
+    "nome": "Espirito Santo",
+    "cidades":  [
     "Afonso Cláudio",
     "Água Doce do Norte",
     "Águia Branca",
@@ -1683,8 +1687,9 @@
   ]
 },
 {
-    "Estado": "Alagoas",
-    "Municipios": [
+    "estado": "Alagoas",
+    "nome": "Alagoas",
+    "cidades": [
     "Água Branca",
     "Anadia",
     "Arapiraca",
@@ -1789,8 +1794,9 @@
     "Viçosa"]
 },
 {
-  "Estado": "Rio Grande Do Sul",
-  "Municipio": [
+  "estado": "Rio Grande Do Sul",
+  "nome": "Rio Grande Do Sul",
+  "cidades": [
     "Aceguá",
     "Água Santa",
     "Agudo",
@@ -2285,8 +2291,9 @@
   ]
 },
 {
-  "Estado": "Santa Catarina",
-  "Municipio": [
+  "estado": "Santa Catarina",
+  "nome": "Santa Catarina",
+  "cidades": [
     "Abdon Batista",
     "Abelardo Luz",
     "Agrolândia",
@@ -2582,8 +2589,9 @@
   ]
 },
 {
-  "Estado": "Paraná",
-  "Municipio":  [
+  "estado": "Paraná",
+  "nome": "Paraná",
+  "cidades":  [
     "Abatiá",
     "Adrianópolis",
     "Agudos do Sul",
@@ -2979,8 +2987,9 @@
   ]
 },
 {
-  "Estado": "Goias",
-  "Municipio":  [
+  "estado": "Goias",
+  "nome": "Goias",
+  "cidades":  [
     "Abadia de Goiás",
     "Abadiânia",
     "Acreúna",
@@ -3229,8 +3238,9 @@
   ]
 },
 {
-    "Estado": "Mato Grosso do Sul",
-    "Municipios": [
+    "estado": "Mato Grosso do Sul",
+    "nome": "Mato Grosso do Sul",
+    "cidades": [
     "Alcinópolis",
     "Amambaí",
     "Anastácio",
@@ -3311,8 +3321,9 @@
     ]
   },
   {
-    "Estado": "Mato Grosso",
-    "Municipios": [
+    "estado": "Mato Grosso",
+    "nome": "Mato Grosso",
+    "cidades": [
     "Acorizal",
     "Água Boa",
     "Alta Floresta",
@@ -3454,8 +3465,9 @@
   ]
   },
   {
-    "Estado": "Amapá",
-    "Municipios":  [
+    "estado": "Amapá",
+    "nome": "Amapá",
+    "cidades":  [
       "Amapá",
       "Calçoene",
       "Cutias",
@@ -3475,8 +3487,9 @@
   ]
   },
   {
-    "Estado": "Tocantins",
-    "Municipios": [
+    "estado": "Tocantins",
+    "nome": "Tocantins",
+    "cidades": [
     "Abreulândia",
     "Aguiarnópolis",
     "Aliança do Tocantins",
@@ -3610,8 +3623,9 @@
   ]
 },
 {
-  "Estado": "Roraima",
-  "Municipios": [
+  "estado": "Roraima",
+  "nome": "Roraima",
+  "cidades": [
     "Alta Floresta d'Oeste",
     "Alto Alegre dos Parecis",
     "Alto Paraíso",
@@ -3667,8 +3681,9 @@
   ]
 },
 {
-  "Estado": "Roraima",
-  "Municipio": [
+  "estado": "Roraima",
+  "nome": "Roraima",
+  "cidades": [
     "Alto Alegre",
     "Amajari",
     "Boa Vista",
@@ -3687,8 +3702,9 @@
   ]
 },
 {
-  "Estado": "Roraima",
-  "Municipios": [
+  "estado": "Roraima",
+  "nome": "Roraima",
+  "cidades": [
     "Alto Alegre",
     "Amajari",
     "Boa Vista",
@@ -3707,8 +3723,9 @@
   ]
 },
 {
-  "Estado": "Pará",
-  "Municipios":  [
+  "estado": "Pará",
+  "nome": "Para",
+  "cidades":  [
     "Abaetetuba",
     "Abel Figueiredo",
     "Acará",
@@ -3855,8 +3872,9 @@
   ]
 },
 {
-  "Estado": "Amazonas",
-  "Municipios": [
+  "estado": "Amazonas",
+  "nome": "Amazonas",
+  "cidades": [
     "Alvarães",
     "Amaturá",
     "Anamã",
@@ -3922,8 +3940,9 @@
   ]
 },
 {
-  "Estado": "Acre",
-  "Municipios":[
+  "estado": "Acre",
+  "nome": "Acre",
+  "cidades":[
             "Acrelândia",
             "Assis Brasil",
             "Brasiléia",
@@ -3949,8 +3968,9 @@
         ]
 },
 {
-  "Estado": "Pernambuco",
-  "Municipio": [
+  "estado": "Pernambuco",
+  "nome": "Pernambuco",
+  "cidades": [
         "Abreu e Lima",
         "Afogados da Ingazeira",
         "Afrânio",
@@ -4139,8 +4159,9 @@
     ]
 },
 {
-  "Estado": "Ceará",
-  "Municipios": [
+  "estado": "Ceará",
+  "nome": "Ceará",
+  "cidades": [
     "Abaiara",
     "Acarape",
     "Acaraú",
@@ -4328,8 +4349,9 @@
   ]
 },
 {
-  "Estado": "Paraiba",
-  "Municipios": [
+  "estado": "Paraiba",
+  "nome": "Paraiba",
+  "cidades": [
     "Alcantil",
     "Algodão de Jandaíra",
     "Alhandra",
@@ -4515,8 +4537,9 @@
   ]
 },
 {
-  "Estado": "Rio Grande Do Norte",
-  "Municipios": [
+  "estado": "Rio Grande Do Norte",
+  "nome": "Rio Grande Do Norte",
+  "cidades": [
     "Acari",
     "Afonso Bezerra",
     "Água Nova",
@@ -4687,8 +4710,9 @@
 ]
 },
   {
-    "Estado": "Alagoas",
-    "Municipios": [
+    "estado": "Alagoas",
+    "nome": "Alagoas",
+    "cidades": [
     "Água Branca",
     "Anadia",
     "Arapiraca",
@@ -4794,8 +4818,9 @@
 ]
 },
 {
-  "Estado": "Piauí",
-  "Municipios": [
+  "estado": "Piauí",
+  "nome": "Piauí",
+  "cidades": [
     "Acauã",
     "Agricolândia",
     "Água Branca",
@@ -5008,8 +5033,9 @@
   ]
 },
 {
-  "Estado": "Bahia",
-  "Municipios": [
+  "estado": "Bahia",
+  "nome": "Bahia",
+  "cidades": [
     "Abaíra",
     "Abaré",
     "Acajutiba",
@@ -5429,8 +5455,9 @@
   ]
 },
 {
-  "Estado": "Maranhão",
-  "Municipios": [
+  "estado": "Maranhão",
+  "nome": "Maranhão",
+  "cidades": [
     "Açailândia",
     "Afonso Cunha",
     "Água Doce do Maranhão",
@@ -5650,8 +5677,9 @@
   ]
 },
 {
-  "Estado": "Sergipe",
-  "Municipios": [
+  "estado": "Sergipe",
+  "nome": "Sergipe",
+  "cidades": [
     "Amparo de São Francisco",
     "Aquidabã",
     "Aracaju",
