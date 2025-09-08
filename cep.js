@@ -28,11 +28,11 @@ try {
     document.getElementById('endereco').value = dados.endereco || '';
     document.getElementById('complemento').value = dados.complemento || '';
     document.getElementById('cidade').value = dados.localidade || '';
-    document.getElementById('estado').value = dados.uf || '';
+    document.getElementById('estado').value = dados.estados || '';
 
     // Ativa autocomplete se endereço não estiver preenchido
     if (!dados.endereco) {
-        ativarSugestoesDeLogradouroOnline(dados.localidade, dados.uf);
+        ativarSugestoesDeLogradouroOnline(dados.localidade, dados.estados);
     }
 
     } catch (erro) {
@@ -43,13 +43,13 @@ try {
 }
 
 //Busca endereços online via Nominatim (OpenStreetMap)
-async function buscarEnderecosOnline(termo, cidade = '', estado = '') {
+async function buscarEnderecosOnline(termo, cidades = '', estados = '') {
     if (termo.length < 3) return;
 
     const datalist = document.getElementById('sugestoes-endereco');
     datalist.innerHTML = '';
 
-    const query = encodeURIComponent(`${termo}, ${cidade}, ${estado}, Brasil`);
+    const query = encodeURIComponent(`${termo}, ${cidades}, ${estados}, Brasil`);
     const url = `https://nominatim.openstreetmap.org/search?format=json&limit=5&q=${query}`;
 
 try {
@@ -74,13 +74,13 @@ try {
 }
 
 // Ativa autocomplete quando cidade/estado estão disponíveis
-function ativarSugestoesDeEnderecoOnline(cidade, estado) {
+function ativarSugestoesDeEnderecoOnline(cidades, estados) {
     const inputEndereco = document.getElementById('endereco');
     inputEndereco.removeAttribute('readonly'); // permite digitar
 
     inputEndereco.addEventListener('input', () => {
         const termo = inputEndereco.value;
-        buscarEnderecosOnline(termo, cidade, estado);
+        buscarEnderecosOnline(termo, cidades, estados);
     });
 }
 
